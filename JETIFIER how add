@@ -1,0 +1,12 @@
+Install Jetifier npm install --save-dev jetifier or yarn add -D jetifier
+Edit your package.json and add a postinstall script: "postinstall": "npx jetify", like so:
+"scripts": {
+    "postinstall": "npx jetify"
+   ...
+}    
+Run npm install or yarn
+At the end of install you should see something like:
+$ npx jetify
+Jetifier found N file(s) to forward-jetify. Using X workers...`. 
+This means it's working. The project should compile fine now.
+This way jetfier will "upgrade" all deps to use AndroidX. This step has to be repeated after each installation, hence the "postinstall" step.
